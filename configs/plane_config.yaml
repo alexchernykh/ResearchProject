@@ -1,0 +1,48 @@
+NEW_DATA: True
+POINT_REND: False
+PLANE: True
+
+TRAIN:
+  NUM_WORKERS: 2
+  BATCH: 2
+  BASE_LR: 0.00025
+  MAXITER: 3
+  ROI_HEADS_BATCH_SIZE_PER_IMAGE: 128
+  OUTPUT_DIR: '../detectron/output/final_op_mode/plane_training/'
+
+VAL:
+#   NAME_MODEL_FILE: "model_final_multilabeled.pth"
+    NAME_MODEL_FILE: "model_final_23_9_plane_only_9_ops.pth"
+
+
+NEW:
+#  JSON_DESCRIPTION: "dataset_registration_detectron2.json"
+#  JSON_DESCRIPTION: 'dataset_registration_detectron2_multilabeled_2Layer.json'
+  JSON_DESCRIPTION: 'dataset_registration_detectron2_plane.json'
+  CLASSES_LIST:
+    - "first incision"
+
+  PATH_TO_DATA: "../data/output/final_op_mode/"
+  PATH_TO_TRAINING_DATA: "../data/output/final_op_mode/plane_train/"
+  PATH_TO_VALIDATION_DATA: "../data/output/final_op_mode/plane_val/"
+
+
+CREATE_DATASET:
+  FOLDER_DATA_NRRD: "../data/new_data_july/*.nrrd"
+  IMG_DIR_TRAIN: "../data/output/final_op_mode/plane_train/*.png"
+  IMG_DIR_VAL: "../data/output/final_op_mode/plane_val/*.png"
+  PADDING: 2
+  OUTPUT_FILE: '../data/output/final_op_mode/plane_train/dataset_registration_detectron2_plane.json'
+  OUTPUT_FILE_VAL: '../data/output/final_op_mode/plane_val/dataset_registration_detectron2_plane.json'
+#   SAVE_MASKS_LOCATION: "../data/output/images_new/masks/foo/"
+#   SAVE_IMAGES_LOCATION_TRAIN: "../data/output/images_new/plane_train/foo/"
+#   SAVE_IMAGES_LOCATION_VAL: "../data/output/images_new/val/"
+#   SAVE_MASKS_LOCATION_VAL: "../data/output/images_new/masks_val/foo/"
+  SAVE_MASKS_LOCATION: "../data/output/final_op_mode/masks/"
+  SAVE_IMAGES_LOCATION_TRAIN: "../data/output/final_op_mode/train/"
+  SAVE_IMAGES_LOCATION_VAL: "../data/output/final_op_mode/val/"
+  SAVE_MASKS_LOCATION_VAL: "../data/output/final_op_mode/masks_val/"
+  TRAIN: True
+  VERBOSE: True
+  SAVE_IMG_AND_MASKS: False
+  CREATE_DESCRIPTION_FILE: True

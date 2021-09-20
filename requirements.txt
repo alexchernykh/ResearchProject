@@ -1,0 +1,16 @@
+albumentations==0.4.5
+numpy
+torch
+opencv-python
+torchvision
+matplotlib
+tqdm
+detectron2
+fvcore
+PyYAML
+Pillow
+scikit-image
+scipy
+pandas
+sklearn
+scikit-learn
