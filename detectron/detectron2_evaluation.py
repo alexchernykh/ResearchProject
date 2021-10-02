@@ -33,7 +33,6 @@ from detectron.utils.nrrd_mapping import (
     mapping_layers_tme,
 )
 
-from detectron.jaccard_evaluation.jaccard_evaluation import remove_dict_struct_from_pd
 
 
 class Metrics:

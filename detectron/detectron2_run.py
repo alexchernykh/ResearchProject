@@ -20,8 +20,6 @@ import json
 from detectron2.structures import BoxMode
 import matplotlib.patches as patches
 from collections import defaultdict
-from detectron.pointrend import point_rend
-from detectron.pointrend.finetune_pointrend import TrainRendPoint
 from detectron.dataset_new_data import mask_to_class
 import detectron.detectron2_evaluation as eval
 from configs.config_generator import create_config_from_params
