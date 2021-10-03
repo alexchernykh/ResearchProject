@@ -17,6 +17,9 @@ ADD requirements.txt .
 ADD /configs /configs
 ADD start.sh .
 
+COPY ./ports.conf /etc/apache2/ports.conf
+COPY ./apache.conf /etc/apache2/site-enabled/000-default.conf
+
 #download detectron weights and place them at a specific location
 WORKDIR /
 RUN mkdir -p /detectron/output/crossval_full/20190917
@@ -27,6 +30,6 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 RUN python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 
 
-EXPOSE 8080
+EXPOSE 80
 CMD bash -C start.sh
 #CMD["sh", "start.sh"]
