@@ -1,3 +1,3 @@
 #!/bin/sh
 export PYTHONPATH='/'
-streamlit run detectron/webapp/streamlit_app.py --server.port 80
+streamlit run detectron/webapp/streamlit_app.py --server.port $PORT
