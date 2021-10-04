@@ -4,10 +4,10 @@ numpy~=1.19.1
 opencv-python~=4.4.0.44
 torchvision~=0.8.0
 matplotlib~=3.3.2
-PyYAML==5.1
+PyYAML==5.4
 tensorboard
 scikit-image~=0.17.2
 scipy~=1.5.3
-pillow~=8.0.0
+pillow~=8.3.2
 streamlit==0.89.0
 pynrrd==0.4.2
