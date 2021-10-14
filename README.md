@@ -1,4 +1,4 @@
-# "Detection and segmentation of tissue structures in laparoscopic image data using deep learning"
+# Detection and segmentation of tissue structures in laparoscopic image data using deep learning
 
 
 ## Table of Content
@@ -14,7 +14,12 @@ This was a research project at the National Center for Tumor Diseases (NCT Dresd
 The project aimed to work tightly with the medical department and support the surgeons during operations.
 For that was developed a novel dataset for the colon operation, annotated by the medical department.
 
-The achieved results in the detection of various tissues and instruments were published at the [CURAC 2021 Conference](https://curac.org/de/curac2021/curac2021-programm)
+The achieved results in the detection of various tissues and instruments were published at the [CURAC 2021 Conference](https://curac.org/de/curac2021/curac2021-programm) 
+
+To get a better understanding was developed a [webapp](https://researchprojectnct.herokuapp.com), that demonstrates the results by uploading an example image of the Frist incision phase.
+A test image from `img/20190917_FIRST_INCISION_00064.png` can be uploaded and will produce a prediction like 
+![prediction](./img/prediction.png)
+
 
 In addition to tissue detection, the research project also covers an approach to suggest surgeons where to place a cut on a "first incision plane".
 Based on a good achieved Intersection over Union score for the "first incision plane", it was made post-processing based on a triangulation technique of the plane.
@@ -36,8 +41,23 @@ Contains following phases:
 
 ## Getting started<a id="start"></a>
 
+### Jupyter Notebook 
+
 Jupyter notebook `detectron/repo_structure_tutorial.ipynb` contains a step by step description of how to use the provided network.
 
+### Docker 
+
+1. Build image 
+
+```shell
+docker build -t surgery .
+```
+
+2. Run container
+
+```shell
+docker run -it -p 8080:8080 surgery
+```
 
 ## Repository structures <a id="repo"></a>
 
