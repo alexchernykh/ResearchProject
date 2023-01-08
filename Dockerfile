@@ -28,7 +28,7 @@ RUN wget https://github.com/alexchernykh/ResearchProject/releases/download/model
 #install dependencies + detectron libs as git source
 RUN pip3 install --no-cache-dir -r requirements.txt
 RUN python -m pip install detectron2==0.5 -f \
-  https://dl.fbaipublicfiles.com/detectron2/wheels/cu110/torch1.7/index.html
+  https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/torch1.7/index.html
 
 
 EXPOSE 80
